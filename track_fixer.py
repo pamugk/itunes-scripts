@@ -83,7 +83,7 @@ if not os.path.exists(args.path):
     raise FileNotFoundError("Analyzed directory not found")
 
 if args.genres is not None and os.path.exists(args.genres):
-    with open(genres, newline="") as csvfile:
+    with open(args.genres, newline="") as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             genres[int(row["id"])] = row["name"]
